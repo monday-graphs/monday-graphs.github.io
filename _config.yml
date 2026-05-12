@@ -16,8 +16,8 @@
 title: 小讨论班2026春
 description: 小讨论班2026春会议资料
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://small-seminar.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-repository: "Small-Seminar/small-seminar.github.io" # for github-metadata
+url: "https://monday-graphs.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+repository: "monday-graphs/monday-graphs.github.io" # for github-metadata
 
 permalink: pretty
 
