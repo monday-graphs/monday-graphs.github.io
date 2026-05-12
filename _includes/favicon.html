@@ -1,0 +1,20 @@
+{%- comment -%}
+  Include as: {%- include_cached favicon.html -%}
+  Depends on: site.static_files, site.favicon_ico.
+  Results in: HTML for a link to favicon files (SVG preferred, ICO fallback).
+{%- endcomment -%}
+
+{% for file in site.static_files %}
+  {% if file.path == '/assets/images/favicon.svg' %}
+    {% assign favicon_svg = true %}
+  {% elsif file.path == site.favicon_ico or file.path == '/favicon.ico' %}
+    {% assign favicon_ico = true %}
+  {% endif %}
+{% endfor %}
+
+{% if favicon_svg %}
+  <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+{% endif %}
+{% if favicon_ico %}
+  <link rel="icon" href="{{ site.favicon_ico | default: '/favicon.ico' | relative_url }}" type="image/x-icon">
+{% endif %}
